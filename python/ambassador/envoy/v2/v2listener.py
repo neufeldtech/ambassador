@@ -670,6 +670,9 @@ class V2Listener(dict):
         if 'xff_num_trusted_hops' in config.ir.ambassador_module:
             base_http_config["xff_num_trusted_hops"] = config.ir.ambassador_module.xff_num_trusted_hops
 
+        if 'idle_timeout' in config.ir.ambassador_module:
+            base_http_config["common_http_protocol_options"] = { 'idle_timeout': config.ir.ambassador_module.idle_timeout }
+
         if 'server_name' in config.ir.ambassador_module:
             base_http_config["server_name"] = config.ir.ambassador_module.server_name
 

@@ -149,6 +149,9 @@ class ListenerFactory:
         if 'xff_num_trusted_hops' in amod:
             primary_listener.xff_num_trusted_hops = amod.xff_num_trusted_hops
 
+        if 'idle_timeout' in amod:
+            primary_listener.idle_timeout = amod.idle_timeout
+
         if 'server_name' in amod:
             primary_listener.server_name = amod.server_name
 
@@ -175,6 +178,9 @@ class ListenerFactory:
 
             if 'xff_num_trusted_hops' in amod:
                 new_listener.xff_num_trusted_hops = amod.xff_num_trusted_hops
+
+            if 'idle_timeout' in amod:
+                new_listener.idle_timeout = amod.idle_timeout
 
             if 'server_name' in amod:
                 new_listener.server_name = amod.server_name

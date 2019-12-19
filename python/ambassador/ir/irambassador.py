@@ -53,7 +53,8 @@ class IRAmbassador (IRResource):
         'use_proxy_proto',
         'use_remote_address',
         'x_forwarded_proto_redirect',
-        'xff_num_trusted_hops'
+        'xff_num_trusted_hops',
+        'idle_timeout'
     ]
 
     service_port: int
@@ -105,6 +106,7 @@ class IRAmbassador (IRResource):
             load_balancer=None,
             circuit_breakers=None,
             xff_num_trusted_hops=0,
+            idle_timeout="0s",
             server_name="envoy",
             debug_mode=False,
             **kwargs
